@@ -1,9 +1,9 @@
 ###########################################################################################
 # PriorityQueue 라이브러리도 있지만 이게 더 빠름
-# python의 heap은 min heap으로 구성되어 있음 -> 정렬 O(nlogn)밖에 안 됨
+# python의 heap은 기본적으로 min heap으로 구성되어 있음 -> 정렬 O(nlogn)밖에 안 됨
 import heapq
 
-def heapsort(iterable): # heapsort([3, 2, 4, 1])
+def heapsort(iterable):
     h = []
     result = []
     for value in iterable:

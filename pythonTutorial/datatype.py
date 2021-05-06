@@ -16,10 +16,10 @@ print(a, type(a))
 ###########################################################################################
 # 현대 컴퓨터 대부분 IEEE754 표준으로 부동소수점 방식 표현
 a = 0.3 + 0.6
-print(a) # == 0.89999999..
-print(round(a, 1))
+print(a)  # 0.89999999.. 2진수로 정확히 표현 불가능
+print(round(a, 1))  # 그래서 종종 이렇게 해줌
 
-# 보통 코테에서는 4번째 자리로 반올림한 결과로 정답 인정
+# 보통 코테에서는 4번째 자리로 반올림한 결과까지 정답 인정
 if round(a, 4) == 0.9:
     print(True)
     print("True")
@@ -27,7 +27,7 @@ else:
     print(False)
 
 ###########################################################################################
-print(6 / 3) # '/' 연산은 기본적으로 실수형
+print(6 / 3)  # '/' 연산은 기본적으로 실수형
 print(7 // 3)
 print(7 % 3)
 print(2 ** 3)
@@ -36,7 +36,7 @@ print(2 ** 3)
 # 파이썬에서 내부적으로 연결 리스트 -> append, remove 등등 가능
 a = []
 # a = list()
-a.append(1) # returns None
+a.append(1)  # returns None
 a.append(2)
 a.append("hello")
 print(a)
@@ -60,12 +60,12 @@ a.insert(2, "hi")
 print(a)
 
 a = [0, 0, 1, 0, 1, 0, 1, 1]
-num_ones = a.count(1) # returns int
+num_ones = a.count(1)  # returns int
 print(num_ones)
 
 # 다른 언어와 다르게 특정 원소 삭제 함수 없음. 그래서 이렇게
 a = [1, 2, 3, 4, 5, 5, 5]
-remove_set = {3, 5} # set
+remove_set = {3, 5}  # set
 result = [i for i in a if i not in remove_set]
 print(result)
 
@@ -79,7 +79,12 @@ a = [1, 2, 3, 4, 5]
 print(a[1:3])
 print(a[3:])
 print(a[-4:-2])
-print(a[3:1]) # []
+print(a[3:1])  # []
+
+array = [1, 2, 3, 4]
+print(array)
+print(array[::-1])  # [4, 3, 2, 1]
+# arr[A:B:C]의 의미는, index A 부터 index B 까지 C의 간격으로 배열을 만들어라
 
 a[1:3] = [0, 0, 0, 0]
 print(a)
@@ -93,17 +98,17 @@ print(array)
 # n * m의 2차원 리스트 초기화 (반드시 comprehension 또는 일일이 할 것)
 n = 3
 m = 4
-array = [[0] * m for _ in range(n)] # _ : 의미 없을 때 사용
+array = [[0] * m for _ in range(n)]  # _ : 의미 없을 때 사용
 print(array)
 # array = [[i] * m for i in range(n)]
 # print(array)
 
 # 그렇지 않으면
-array = [[0] * m] * n # 동일한 객체에 대한 m개 / n개 레퍼런스
+array = [[0] * m] * n  # 동일한 객체에 대한 m개 / n개 레퍼런스
 print(array)
 
 array[1][1] = 5
-print(array)
+print(array)  # [[0,5,0,0], [0,5,0,0], [0,5,0,0]]
 
 array = [[0] * m for _ in range(n)]
 # array = [[0,0,0,0], [0,0,0,0], [0,0,0,0]]
@@ -154,8 +159,9 @@ for key in key_list:
 
 ###########################################################################################
 # 집합 자료형 (set)
-# data = {1, 1, 2, 3, 4, 4, 5}
+# set도 iterable임
 data = set([1, 1, 2, 3, 4, 4, 5])
+# data = {1, 1, 2, 3, 4, 4, 5}
 print(data)
 data = set("aabbccdef")
 print(data)

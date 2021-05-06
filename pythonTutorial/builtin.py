@@ -1,8 +1,8 @@
 ###########################################################################################
 # built-in functions
-# no need for "import"
+# no need to "import"
 
-result = sum([1, 2, 3, 4])  # should be iterable
+result = sum([1, 2, 3, 4])  # iterable
 print(result)
 
 minimum = min(5, 2, 4, 1)
@@ -13,7 +13,7 @@ result = eval("(3 + 5) * 7")  # math in string
 # result = eval("3 plus 4")  # error
 print(result)
 
-result = sorted([3, 7, 6, 4, 1, 1])  # should be iterable
+result = sorted([3, 7, 6, 4, 1, 1])  # iterable
 print(result)
 result = sorted([3, 7, 6, 4, 1, 1], reverse=True)
 print(result)

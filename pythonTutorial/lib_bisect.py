@@ -6,7 +6,7 @@ from bisect import bisect_left, bisect_right, bisect
 a = [1, 2, 4, 4, 8]
 x = 4
 print(bisect_left(a, x))  # 순서 유지, 가능한 가장 왼쪽 인덱스
-print(bisect_right(a, x))  # 순서 유지, 가능한 가장 왼쪽 인덱스 (bisect()와 동)
+print(bisect_right(a, x))  # 순서 유지, 가능한 가장 오른쪽 인덱스 (bisect()와 동일)
 print(bisect(a, x))
 
 
